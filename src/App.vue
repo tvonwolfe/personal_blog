@@ -2,8 +2,8 @@
   <div id="app">
     <Header />
     <NavBar />
-    <router-view />
-    <Footer />
+    <router-view></router-view>
+    <Footer name="Tony Von Wolfe" />
   </div>
 </template>
 
