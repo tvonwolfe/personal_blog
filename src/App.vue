@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <NavBar />
+    <Nav />
     <router-view></router-view>
     <Footer name="Tony Von Wolfe" />
   </div>
@@ -10,21 +10,27 @@
 <script>
 import Header from "./components/layout/Header.vue";
 import Footer from "./components/layout/Footer.vue";
-import NavBar from "./components/NavBar.vue";
+import Nav from "./components/layout/Nav.vue";
 
 export default {
   name: "app",
   components: {
     Header,
     Footer,
-    NavBar
+    Nav
   }
 };
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+html {
+  background-color: #333;
+}
 * {
   margin: 0;
+  padding: 0;
 }
 #app {
   display: flex;
@@ -35,5 +41,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #ddd;
   background-color: #333;
+  width: 100%;
 }
 </style>
