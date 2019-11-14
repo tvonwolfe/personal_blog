@@ -1,0 +1,20 @@
+<template>
+  <div class="blog_post">
+    <p>{{ content }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "BlogPost",
+  props: ["id", "title", "content", "timestamp"]
+};
+</script>
+
+<style scoped>
+.blog_post {
+  display: flex;
+  padding: 20px;
+  background-color: #444;
+}
+</style>

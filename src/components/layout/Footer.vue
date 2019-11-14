@@ -20,6 +20,7 @@ export default {
   border-top: 1px solid grey;
   padding: 15px 10px;
   color: #888;
+  font-size: 12px;
 }
 
 #github_icon {

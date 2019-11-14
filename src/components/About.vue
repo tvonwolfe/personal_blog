@@ -1,9 +1,27 @@
 <template>
-  <div></div>
+  <div>
+    <ContentView :blogPosts="blogPosts" />
+  </div>
 </template>
 
 <script>
-export default {};
+import ContentView from "./layout/ContentView.vue";
+export default {
+  name: "About",
+  components: { ContentView },
+  data() {
+    return {
+      blogPosts: null
+    };
+  },
+  mounted() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts?_limit=10")
+      .then(response => {
+        this.blogPosts = response.data;
+      });
+  }
+};
 </script>
 
-<style></style>
+<style scoped></style>
