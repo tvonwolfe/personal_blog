@@ -6,6 +6,8 @@
 
 <script>
 import ContentView from "./layout/ContentView.vue";
+import axios from "axios";
+
 export default {
   name: "About",
   components: { ContentView },

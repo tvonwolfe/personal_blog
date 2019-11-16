@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div v-if="isMobileUser()">
+    <div v-if="isMobile()">
       <div class="mb_bar">
         <transition name="fade" mode="out-in">
           <i
@@ -48,9 +48,11 @@
 </template>
 
 <script>
+import { mixinDetectMobile } from "../../detectMobile.js";
 export default {
   name: "Nav",
   components: {},
+  mixins: [mixinDetectMobile],
   created() {
     this.$router.options.routes.forEach(route => {
       this.navselections.push({
@@ -64,23 +66,6 @@ export default {
       navselections: [],
       showNavMenu: false
     };
-  },
-  methods: {
-    isMobileUser() {
-      if (
-        navigator.userAgent.match(/Android/i) ||
-        navigator.userAgent.match(/webOS/i) ||
-        navigator.userAgent.match(/iPhone/i) ||
-        navigator.userAgent.match(/iPad/i) ||
-        navigator.userAgent.match(/iPod/i) ||
-        navigator.userAgent.match(/BlackBerry/i) ||
-        navigator.userAgent.match(/Windows Phone/i)
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    }
   }
 };
 </script>
@@ -121,6 +106,7 @@ ul {
   text-decoration: none;
   cursor: pointer;
   text-align: center;
+  transition: 0.3s;
 }
 
 .mb_bar {
@@ -160,7 +146,8 @@ ul {
   background-color: #444;
 }
 
-.router-link-exact-active {
+.router-link-exact-active,
+.router-link-exact-active:hover {
   background-color: #777;
 }
 </style>

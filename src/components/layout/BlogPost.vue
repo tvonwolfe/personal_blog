@@ -29,6 +29,10 @@ export default {
   background-color: #444;
 }
 
+.blog_post:first-of-type {
+  margin-top: 50px;
+}
+
 .post_title_container {
   margin: 30px 0px;
   font-weight: bold;
@@ -38,5 +42,10 @@ export default {
 .post_title {
   text-decoration: none;
   color: #999;
+  transition: 0.2s;
+}
+
+.post_title:hover {
+  color: #bbb;
 }
 </style>
