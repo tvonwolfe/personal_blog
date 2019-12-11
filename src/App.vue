@@ -40,7 +40,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ddd;
-  background-color: #333;
+  background-color: #303336;
   width: 100%;
 }
 </style>

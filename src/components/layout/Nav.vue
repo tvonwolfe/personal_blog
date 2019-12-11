@@ -75,7 +75,6 @@ export default {
 
 .navbar {
   display: flex;
-  background-color: #555;
   overflow: hidden;
   padding: 0;
 }
@@ -89,16 +88,16 @@ export default {
   position: relative;
   width: 100%;
   align-self: flex-start;
-  background-color: #555;
+  background-color: #3d4043;
 }
 
 ul {
   align-self: flex-start;
-  background-color: #555;
+  background-color: #3d4043;
 }
 
 .dt_navbutton {
-  background-color: #555;
+  background-color: #3d4043;
   border: none;
   color: #ddd;
   padding: 10px 20px;
@@ -110,7 +109,7 @@ ul {
 }
 
 .mb_bar {
-  background-color: #555;
+  background-color: #3d4043;
 }
 
 .mb_navbutton {
@@ -143,11 +142,11 @@ ul {
 }
 
 .dt_navbutton:hover {
-  background-color: #444;
+  background-color: #555;
 }
 
 .router-link-exact-active,
 .router-link-exact-active:hover {
-  background-color: #777;
+  background-color: #555;
 }
 </style>

@@ -26,11 +26,11 @@ export default {
   flex-direction: column;
   padding: 10px 20px;
   margin: 20px;
-  background-color: #444;
+  background-color: #3d4043;
 }
 
 .blog_post:first-of-type {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .post_title_container {
