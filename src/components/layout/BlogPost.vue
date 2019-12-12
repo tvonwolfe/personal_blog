@@ -24,13 +24,18 @@ export default {
 .blog_post {
   display: flex;
   flex-direction: column;
-  padding: 10px 20px;
-  margin: 20px;
+  padding: 20px;
+  margin: 15px;
   background-color: #3d4043;
+  border-radius: 5px;
 }
 
 .blog_post:first-of-type {
-  margin-top: 40px;
+  margin-top: 25px;
+}
+
+.blog_post:last-of-type {
+  margin-bottom: 35px;
 }
 
 .post_title_container {
