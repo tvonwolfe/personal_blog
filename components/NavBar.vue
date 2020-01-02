@@ -1,0 +1,158 @@
+<template>
+  <nav>
+    <div v-if="isMobile()">
+      <div class="mb_bar">
+        <transition name="fade" mode="out-in">
+          <i
+            v-if="!showNavMenu"
+            @click="showNavMenu = !showNavMenu"
+            class="material-icons menu"
+          >
+            menu
+          </i>
+          <i
+            v-else
+            @click="showNavMenu = !showNavMenu"
+            class="material-icons clear"
+          >
+            clear
+          </i>
+        </transition>
+      </div>
+      <transition name="fade">
+        <ul v-if="showNavMenu" class="navmenu">
+          <nuxt-link
+            :key="nav.title"
+            v-for="nav in navselections"
+            :to="{ path: nav.route }"
+            @click.native="showNavMenu = !showNavMenu"
+            class="mb_navbutton"
+          >
+            {{ nav.title }}
+          </nuxt-link>
+        </ul>
+      </transition>
+    </div>
+    <div v-else>
+      <ul class="navbar">
+        <nuxt-link
+          :key="nav.title"
+          v-for="nav in navselections"
+          :to="{ path: nav.route }"
+          class="dt_navbutton"
+          >{{ nav.title }}
+        </nuxt-link>
+      </ul>
+    </div>
+  </nav>
+</template>
+
+<script>
+import { mixinDetectMobile } from './DetectMobile.js'
+export default {
+  name: 'NavBar',
+  components: {},
+  mixins: [mixinDetectMobile],
+  props: {
+    links: {
+      type: Array,
+      required: true
+    }
+  },
+  data() {
+    return {
+      navselections: [],
+      showNavMenu: false
+    }
+  },
+  created() {
+    this.links.forEach((route) => {
+      this.navselections.push({
+        title: route.name,
+        route: route.path
+      })
+    })
+  }
+}
+</script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.navbar {
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+}
+
+.navmenu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  align-self: flex-start;
+  background-color: #3d4043;
+}
+
+ul {
+  align-self: flex-start;
+  background-color: #3d4043;
+}
+
+.dt_navbutton {
+  background-color: #3d4043;
+  border: none;
+  color: #ddd;
+  padding: 10px 20px;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.mb_bar {
+  background-color: #3d4043;
+}
+
+.mb_navbutton {
+  align-items: center;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+.menu,
+.clear {
+  cursor: pointer;
+  font-size: 3em;
+  padding-left: 2%;
+  transition: all 0.3s ease;
+  width: 1.5em;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.dt_navbutton:hover {
+  background-color: #555;
+}
+
+.nuxt-link-exact-active,
+.nuxt-link-exact-active:hover {
+  background-color: #555;
+}
+</style>
