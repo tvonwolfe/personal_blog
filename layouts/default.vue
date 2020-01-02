@@ -13,10 +13,12 @@ import NavBar from '../components/NavBar.vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 
-firebase.initializeApp({
-  apiKey: 'AIzaSyAneynJ9HVrisOJ2r3JV35u3tAOB31_XPM',
-  projectId: 'life-of-tony'
-})
+if (!firebase.apps.length) {
+  firebase.initializeApp({
+    apiKey: 'AIzaSyAneynJ9HVrisOJ2r3JV35u3tAOB31_XPM',
+    projectId: 'life-of-tony'
+  })
+}
 
 export default {
   components: { NavBar, Header, Footer },
