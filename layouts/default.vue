@@ -20,6 +20,11 @@ firebase.initializeApp({
 
 export default {
   components: { NavBar, Header, Footer },
+  head() {
+    return {
+      title: 'Life of Tony'
+    }
+  },
   data() {
     this.linkRoutes = []
     const linkNames = ['Home', 'Programming', 'Cars', 'Life', 'Travel', 'About']
