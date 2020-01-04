@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div v-if="isMobile()">
+    <div v-show="isMobile()">
       <div class="mb_bar">
         <transition name="fade" mode="out-in">
           <menu-icon
@@ -18,7 +18,7 @@
         </transition>
       </div>
       <transition name="fade">
-        <ul v-if="showNavMenu" class="navmenu">
+        <ul v-show="showNavMenu" class="navmenu">
           <nuxt-link
             :key="nav.title"
             v-for="nav in navselections"
@@ -31,7 +31,7 @@
         </ul>
       </transition>
     </div>
-    <div v-else>
+    <div v-show="!isMobile()">
       <ul class="navbar">
         <nuxt-link
           :key="nav.title"
@@ -77,8 +77,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
 .navbar {
   display: flex;
   overflow: hidden;
