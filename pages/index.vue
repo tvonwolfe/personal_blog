@@ -7,6 +7,7 @@
 <style>
 .container {
   margin: auto;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;

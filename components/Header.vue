@@ -16,11 +16,16 @@ export default {
   background: #003b6d;
   font-size: 15px;
   padding: 20px 10px;
+  text-decoration: none;
 }
 
-/* nuxt-links get translated to anchor tags. */
 h1 {
-  text-decoration: none;
   color: #ddd;
+}
+
+/* weird underline wouldn't go away without this. */
+.nuxt-link-exact-active,
+.nuxt-link-active {
+  text-decoration: none;
 }
 </style>

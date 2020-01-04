@@ -50,5 +50,9 @@ export default {
   },
   generate: {
     routes: ['/programming', '/cars', '/travel', '/life', '/about']
+  },
+  server: {
+    port: 3000,
+    host: '0.0.0.0'
   }
 }

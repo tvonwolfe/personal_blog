@@ -3,20 +3,18 @@
     <div v-if="isMobile()">
       <div class="mb_bar">
         <transition name="fade" mode="out-in">
-          <i
+          <menu-icon
             v-if="!showNavMenu"
             @click="showNavMenu = !showNavMenu"
-            class="material-icons menu"
-          >
-            menu
-          </i>
-          <i
+            :size="40"
+            class="menubutton"
+          />
+          <close-icon
             v-else
             @click="showNavMenu = !showNavMenu"
-            class="material-icons clear"
-          >
-            clear
-          </i>
+            :size="40"
+            class="menubutton"
+          />
         </transition>
       </div>
       <transition name="fade">
@@ -48,10 +46,12 @@
 </template>
 
 <script>
+import MenuIcon from 'vue-material-design-icons/Menu.vue'
+import CloseIcon from 'vue-material-design-icons/Close.vue'
 import { mixinDetectMobile } from './DetectMobile.js'
 export default {
   name: 'NavBar',
-  components: {},
+  components: { MenuIcon, CloseIcon },
   mixins: [mixinDetectMobile],
   props: {
     links: {
@@ -128,13 +128,10 @@ ul {
   width: 100%;
 }
 
-.menu,
-.clear {
+.menubutton {
   cursor: pointer;
-  font-size: 3em;
   padding-left: 2%;
   transition: all 0.3s ease;
-  width: 1.5em;
 }
 
 .fade-enter-active,

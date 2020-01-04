@@ -97,10 +97,10 @@ export default {
 }
 
 .post_title:visited {
-  color: #999;
+  color: #777;
 }
 
 .post_title:hover {
-  color: #bbb;
+  color: #aaa;
 }
 </style>
