@@ -1,7 +1,7 @@
 {
   "name": "life-of-tony",
   "version": "1.0.0",
-  "description": "Personal blogging site implemented using Vue + Nuxt",
+  "description": "My remarkable Nuxt.js project",
   "author": "twolfe21",
   "private": true,
   "scripts": {
