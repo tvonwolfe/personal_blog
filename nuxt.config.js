@@ -47,5 +47,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  generate: {
+    routes: ['/programming', '/cars', '/travel', '/life', '/about']
   }
 }
