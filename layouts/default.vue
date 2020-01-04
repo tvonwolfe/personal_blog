@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import '../node_modules/typeface-roboto/index.css';
 
 * {
   font-family: 'Roboto';
