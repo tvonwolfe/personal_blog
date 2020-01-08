@@ -25,6 +25,7 @@
     "firebase": "^7.6.1",
     "marked": "^0.8.0",
     "nuxt": "^2.0.0",
+    "raw-loader": "^4.0.0",
     "typeface-roboto": "0.0.75",
     "vue-emotion": "^0.4.2",
     "vue-material-design-icons": "^4.4.0"

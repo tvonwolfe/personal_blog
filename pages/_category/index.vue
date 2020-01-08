@@ -1,15 +1,15 @@
 <template>
   <div :class="[{ load_spinner: isLoading || errorLoading }]">
     <BeatLoader
-      :loading="isLoading"
+      :loading="isLoading && !errorLoading"
       :size="50"
       class="load_spinner"
       color="#666"
     />
-    <span v-if="errorLoading" class="loaderror"
-      ><h2>Something went wrong :(</h2></span
-    >
-    <ContentView v-if="!errorLoading" :blogPosts="posts" />
+    <span v-if="errorLoading" class="loaderror">
+      <h2>Something went wrong :(</h2>
+    </span>
+    <ContentView v-if="!isLoading && !errorLoading" :blogPosts="posts" />
   </div>
 </template>
 
@@ -49,7 +49,6 @@ export default {
       })
       .catch(() => {
         this.errorLoading = true
-        this.isLoading = false
       })
   }
 }

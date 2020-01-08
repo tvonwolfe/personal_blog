@@ -46,10 +46,15 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        use: 'raw-loader'
+      })
+    }
   },
   generate: {
-    routes: ['/programming', '/cars', '/travel', '/life', '/about']
+    routes: ['/programming', '/cars', '/travel', '/life']
   },
   server: {
     port: 3000,

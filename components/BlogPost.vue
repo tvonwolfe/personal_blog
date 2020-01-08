@@ -1,27 +1,21 @@
 <template>
   <div class="blog_post">
-    <div>
-      <span class="metadata_bar">
-        <nuxt-link :to="{ path: '/' + category }" class="category_link">{{
-          this.$route.params.category === category
-            ? ''
-            : category.charAt(0).toUpperCase() + category.slice(1)
-        }}</nuxt-link>
-      </span>
-      <span class="post_title">
-        <nuxt-link
-          :to="`${this.$route.name.toLowerCase()}/posts?id=${id}`"
-          class="post_title"
-          >{{ title }}</nuxt-link
-        >
-      </span>
-      <div class="timestamp">
-        <p>
-          {{ formatPostDate() }}
-        </p>
-      </div>
-      <MarkdownView :md="content" />
+    <span v-if="!this.$route.path.includes(category)" class="metadata_bar">
+      <nuxt-link :to="{ path: '/' + category }" class="category_link">{{
+        this.$route.path.charAt(1).toUpperCase() + this.$route.path.slice(2)
+      }}</nuxt-link>
+    </span>
+    <span v-if="displayTitleAndDate" class="post_title">
+      <nuxt-link :to="`${this.$route.path}/post?id=${id}`" class="post_title">{{
+        title
+      }}</nuxt-link>
+    </span>
+    <div v-if="displayTitleAndDate" class="timestamp">
+      <p>
+        {{ formatPostDate() }}
+      </p>
     </div>
+    <MarkdownView :md="content" />
   </div>
 </template>
 
@@ -37,7 +31,8 @@ export default {
     category: String,
     title: String,
     content: String,
-    timestamp: Number
+    timestamp: Number,
+    displayTitleAndDate: { type: Boolean, default: true }
   },
   methods: {
     formatPostDate() {
@@ -94,10 +89,6 @@ export default {
   font-weight: bold;
   font-size: 25px;
   margin: 0px 0px 2px 0px;
-}
-
-.post_title:visited {
-  color: #777;
 }
 
 .post_title:hover {

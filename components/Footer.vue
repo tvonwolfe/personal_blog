@@ -28,7 +28,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   margin: auto 0 0 0;
-  border-top: 1px solid grey;
+  border-top: 1px solid #4c4c4c;
   padding: 10px 20px;
   color: #888;
   font-size: 12px;
@@ -40,5 +40,6 @@ img {
 
 p {
   margin-top: 5px;
+  line-height: 1;
 }
 </style>

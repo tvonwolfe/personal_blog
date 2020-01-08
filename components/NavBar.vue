@@ -37,6 +37,7 @@
           :key="nav.title"
           v-for="nav in navselections"
           :to="{ path: nav.route }"
+          :exact="nav.route == '/'"
           class="dt_navbutton"
           >{{ nav.title }}
         </nuxt-link>
@@ -146,8 +147,8 @@ ul {
   background-color: #555;
 }
 
-.nuxt-link-exact-active,
-.nuxt-link-exact-active:hover {
+.nuxt-link-exact-active:hover,
+.nuxt-link-active {
   background-color: #555;
 }
 </style>

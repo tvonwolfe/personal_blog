@@ -30,14 +30,7 @@ export default {
       type: Array,
       default: null
     }
-  },
-  data() {
-    return {
-      MobileClass: 'mb_feed_width',
-      DesktopClass: 'dt_feed_width'
-    }
-  },
-  methods: {}
+  }
 }
 </script>
 
