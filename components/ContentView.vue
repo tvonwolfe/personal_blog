@@ -46,7 +46,7 @@ export default {
 }
 
 .dt_feed_width {
-  width: auto;
+  width: 720px;
   max-width: 720px;
 }
 </style>

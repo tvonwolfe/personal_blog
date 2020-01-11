@@ -26,9 +26,4 @@ a:visited {
   line-height: 1.5;
   margin-top: 15px;
 }
-
-.markdown_area *:first-of-type {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
 </style>

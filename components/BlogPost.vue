@@ -1,14 +1,20 @@
 <template>
   <div class="blog_post">
     <span v-if="!this.$route.path.includes(category)" class="metadata_bar">
-      <nuxt-link :to="{ path: '/' + category }" class="category_link">{{
-        this.$route.path.charAt(1).toUpperCase() + this.$route.path.slice(2)
-      }}</nuxt-link>
+      <nuxt-link :to="{ path: '/' + category }" class="category_link">
+        {{
+          this.$route.path.charAt(1).toUpperCase() + this.$route.path.slice(2)
+        }}
+      </nuxt-link>
     </span>
     <span v-if="displayTitleAndDate" class="post_title">
-      <nuxt-link :to="`${this.$route.path}/post?id=${id}`" class="post_title">{{
-        title
-      }}</nuxt-link>
+      <nuxt-link
+        :post-data="postData"
+        :to="{ path: getNextPath(), query: { id: id } }"
+        class="post_title"
+      >
+        {{ title }}
+      </nuxt-link>
     </span>
     <div v-if="displayTitleAndDate" class="timestamp">
       <p>
@@ -41,6 +47,15 @@ export default {
         month: 'long',
         day: 'numeric'
       })
+    },
+    getNextPath() {
+      const path = this.$route.path + '/post'
+      const pathArray = path.split('/')
+      if (pathArray.length !== new Set(pathArray).size) {
+        return this.$route.path
+      } else {
+        return path
+      }
     }
   }
 }

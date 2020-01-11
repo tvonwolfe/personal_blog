@@ -41,7 +41,10 @@ export default {
             id: doc.id,
             category: data.post_category,
             title: data.post_title,
-            content: data.post_contents,
+            content: data.post_contents
+              .split('\n\n')
+              .slice(0, 2) // first 3 'paragraphs'
+              .join(),
             timestamp: data.post_timestamp.seconds
           })
         })
