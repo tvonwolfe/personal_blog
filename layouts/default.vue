@@ -16,6 +16,7 @@ import Footer from '../components/Footer.vue'
 if (!firebase.apps.length) {
   firebase.initializeApp({
     apiKey: 'AIzaSyAneynJ9HVrisOJ2r3JV35u3tAOB31_XPM',
+    authDomain: 'life-of-tony.web.app',
     projectId: 'life-of-tony'
   })
 }
