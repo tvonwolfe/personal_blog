@@ -4,6 +4,9 @@
       <div class="cardheading">
         <h1>Sign in</h1>
       </div>
+      <div v-if="error" class="errormsg">
+        <p>Invalid username or password.</p>
+      </div>
       <form @submit.prevent="handleSubmit">
         <div class="textboxcontainer">
           <label for="email">Email</label>
@@ -30,7 +33,9 @@
           />
         </div>
         <div class="buttoncontainer">
-          <button type="submit" class="submitbutton">Login</button>
+          <button type="submit" class="submitbutton">
+            {{ loginButtonText }}
+          </button>
         </div>
       </form>
     </div>
@@ -40,6 +45,7 @@
 <script>
 import firebase from 'firebase'
 import { mixinDetectMobile } from '../../components/DetectMobile.js'
+require('firebase/auth')
 export default {
   mixins: [mixinDetectMobile],
   data() {
@@ -48,18 +54,25 @@ export default {
         email: '',
         password: ''
       },
-      error: null
+      error: false,
+      loginButtonText: 'Sign in'
     }
   },
   methods: {
     handleSubmit() {
+      this.loginButtonText = 'Signing in...'
+      this.error = false
       firebase
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then((data) => {
           this.$router.push({
-            path: '/new'
+            path: this.$route.fullPath + '/new'
           })
+        })
+        .catch(() => {
+          this.error = true
+          this.loginButtonText = 'Sign in'
         })
     }
   }
@@ -131,5 +144,15 @@ button {
 .buttoncontainer {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.errormsg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.errormsg > p {
+  color: red;
 }
 </style>

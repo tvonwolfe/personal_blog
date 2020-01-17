@@ -48,12 +48,22 @@ export default {
 <style>
 @import '../node_modules/typeface-roboto/index.css';
 
-* {
+html {
   font-family: 'Roboto';
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+* {
   margin: 0;
+  tab-size: 4ch;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #279cd6;
 }
 
 #app {

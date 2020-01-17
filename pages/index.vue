@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h1>Life of Tony is undergoing an overhaul. Check back soon!</h1>
+    <h1 class="message">
+      Life of Tony is undergoing an overhaul. Check back soon!
+    </h1>
   </div>
 </template>
 
@@ -14,7 +16,7 @@
   text-align: center;
 }
 
-h1 {
+.message {
   color: #888;
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <span id="header">
-    <nuxt-link :to="{ path: '/' }"><h1>Life of Tony</h1></nuxt-link>
+    <nuxt-link :to="{ path: '/' }">
+      <h1 class="title">Life of Tony</h1>
+    </nuxt-link>
   </span>
 </template>
 
@@ -19,7 +21,7 @@ export default {
   text-decoration: none;
 }
 
-h1 {
+.title {
   color: #ddd;
 }
 

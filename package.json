@@ -24,6 +24,7 @@
     "emotion": "^9.2.6",
     "firebase": "^7.6.1",
     "highlight.js": "^9.17.1",
+    "lodash": "^4.17.15",
     "marked": "^0.8.0",
     "nuxt": "^2.0.0",
     "raw-loader": "^4.0.0",

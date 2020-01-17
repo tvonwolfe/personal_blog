@@ -37,14 +37,8 @@ pre * {
   white-space: pre;
 }
 
-a,
-a:visited {
-  text-decoration: none;
-  color: #279cd6;
-}
-
 .markdown_area * {
+  margin-bottom: 10px;
   line-height: 1.5;
-  margin-top: 15px;
 }
 </style>
