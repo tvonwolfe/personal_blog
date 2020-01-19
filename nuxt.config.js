@@ -54,7 +54,14 @@ export default {
     }
   },
   generate: {
-    routes: ['/programming', '/cars', '/travel', '/life']
+    routes: [
+      '/create',
+      '/create/new',
+      '/programming',
+      '/cars',
+      '/travel',
+      '/life'
+    ]
   },
   server: {
     port: 3000,

@@ -23,6 +23,7 @@
             :key="nav.title"
             v-for="nav in navselections"
             :to="{ path: nav.route }"
+            :exact="nav.route == '/'"
             @click.native="showNavMenu = !showNavMenu"
             class="mb_navbutton"
           >

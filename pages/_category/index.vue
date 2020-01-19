@@ -47,6 +47,16 @@ export default {
               .join(),
             timestamp: data.post_timestamp.seconds
           })
+
+          // sort in descending order by timestamp.
+          // Largest (i.e. most recent) will appear first.
+          this.posts.sort((a, b) => {
+            if (a.timestamp > b.timestamp) {
+              return -1
+            } else {
+              return 1
+            }
+          })
         })
         this.isLoading = false
       })

@@ -47,7 +47,7 @@ export default {
   justify-content: space-evenly;
   height: 50vh;
   margin: auto;
-  width: 90%;
+  width: 100%;
   border: transparent;
   border-radius: 5px;
 }
