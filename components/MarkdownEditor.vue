@@ -1,8 +1,8 @@
 <template>
   <div class="editor_container">
     <textarea
-      :value="inputData"
-      @input="update"
+      v-model="inputData"
+      @keyup="update"
       @keydown.tab.exact.prevent="tabRight($event)"
       @keydown.shift.tab.prevent="tabLeft($event)"
       class="text_editor"
@@ -35,6 +35,7 @@ export default {
     },
     update: _.debounce(function(e) {
       this.inputData = e.target.value
+      this.$emit('update:input', this.inputData)
     }, 300)
   }
 }

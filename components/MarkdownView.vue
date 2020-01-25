@@ -38,7 +38,7 @@ pre * {
 }
 
 .markdown_area * {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   line-height: 1.5;
 }
 </style>

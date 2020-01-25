@@ -1,15 +1,12 @@
 <template>
   <div class="blog_post">
-    <span v-if="!this.$route.path.includes(category)" class="metadata_bar">
+    <span v-show="!this.$route.path.includes(category)" class="metadata_bar">
       <nuxt-link :to="{ path: '/' + category }" class="category_link">
-        {{
-          this.$route.path.charAt(1).toUpperCase() + this.$route.path.slice(2)
-        }}
+        {{ titlePathLink }}
       </nuxt-link>
     </span>
     <span v-if="displayTitleAndDate" class="post_title">
       <nuxt-link
-        :post-data="postData"
         :to="{ path: getNextPath(), query: { id: id } }"
         class="post_title"
       >
@@ -34,11 +31,21 @@ export default {
   },
   props: {
     id: String,
-    category: String,
+    category: {
+      type: String,
+      default: ''
+    },
     title: String,
     content: String,
     timestamp: Number,
     displayTitleAndDate: { type: Boolean, default: true }
+  },
+  data() {
+    return {
+      categoryData: this.category,
+      titlePathLink:
+        this.categoryData[0].toUpperCase() + this.categoryData.substring(1)
+    }
   },
   methods: {
     formatPostDate() {
@@ -49,7 +56,7 @@ export default {
       })
     },
     getNextPath() {
-      const path = this.$route.path + '/post'
+      const path = '/' + this.category + '/post'
       const pathArray = path.split('/')
       if (pathArray.length !== new Set(pathArray).size) {
         return this.$route.path
@@ -82,7 +89,7 @@ export default {
 
 .metadata_bar {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
 }
 
