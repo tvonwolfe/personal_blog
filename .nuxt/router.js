@@ -8,7 +8,7 @@ const _6f98f825 = () => interopDefault(import('..\\pages\\create\\index.vue' /* 
 const _155fa06f = () => interopDefault(import('..\\pages\\create\\new\\index.vue' /* webpackChunkName: "pages_create_new_index" */))
 const _18b19121 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 const _668a7556 = () => interopDefault(import('..\\pages\\_category\\index.vue' /* webpackChunkName: "pages__category_index" */))
-const _551c3c36 = () => interopDefault(import('..\\pages\\_category\\post\\index.vue' /* webpackChunkName: "pages__category_post_index" */))
+const _19249acc = () => interopDefault(import('..\\pages\\_category\\post.vue' /* webpackChunkName: "pages__category_post" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -48,7 +48,7 @@ export const routerOptions = {
     name: "category"
   }, {
     path: "/:category/post",
-    component: _551c3c36,
+    component: _19249acc,
     name: "category-post"
   }],
 

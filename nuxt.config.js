@@ -60,7 +60,11 @@ export default {
       '/programming',
       '/cars',
       '/travel',
-      '/life'
+      '/life',
+      '/programming/post',
+      'cars/post',
+      'travel/post',
+      'life/post'
     ]
   },
   server: {

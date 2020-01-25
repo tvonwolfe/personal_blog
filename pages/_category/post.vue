@@ -16,7 +16,7 @@
 <script>
 import { BeatLoader } from '@saeris/vue-spinners'
 import firebase from 'firebase/app'
-import ContentView from '../../../components/ContentView.vue'
+import ContentView from '../../components/ContentView.vue'
 import 'firebase/firestore'
 
 export default {
@@ -57,7 +57,6 @@ export default {
       })
       .catch(() => {
         this.errorLoading = true
-        console.log('error')
       })
       .finally(() => {
         this.isLoading = false
