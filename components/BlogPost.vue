@@ -2,7 +2,7 @@
   <div class="blog_post">
     <span v-show="!this.$route.path.includes(category)" class="metadata_bar">
       <nuxt-link :to="{ path: '/' + category }" class="category_link">
-        {{ titlePathLink }}
+        {{ categoryLink }}
       </nuxt-link>
     </span>
     <span v-if="displayTitleAndDate" class="post_title">
@@ -42,10 +42,12 @@ export default {
   },
   data() {
     return {
-      categoryData: this.category,
-      titlePathLink:
-        this.categoryData[0].toUpperCase() + this.categoryData.substring(1)
+      categoryLink: ''
     }
+  },
+  created() {
+    this.categoryLink =
+      this.category.charAt(0).toUpperCase() + this.category.substring(1)
   },
   methods: {
     formatPostDate() {
@@ -76,7 +78,7 @@ export default {
   margin: 15px;
   background-color: #3d4043;
   border-radius: 4px;
-  width: 95%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
 }
 
 .blog_post:first-of-type {

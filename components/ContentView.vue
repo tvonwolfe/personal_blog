@@ -65,7 +65,7 @@ export default {
 }
 
 .mb_feed_width {
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .dt_feed_width {

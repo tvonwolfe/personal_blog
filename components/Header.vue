@@ -16,7 +16,6 @@ export default {
 #header {
   display: flex;
   background: #003b6d;
-  font-size: 15px;
   padding: 20px 10px;
   text-decoration: none;
 }
