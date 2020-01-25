@@ -15,6 +15,9 @@
       :timestamp="post.timestamp"
       :id="post.id"
     />
+    <div v-show="noBlogPosts" class="noposts">
+      <h1>There's nothing here yet...</h1>
+    </div>
   </div>
 </template>
 
@@ -30,6 +33,16 @@ export default {
       type: Array,
       default: null
     }
+  },
+  data() {
+    return {
+      noBlogPosts: false
+    }
+  },
+  mounted() {
+    if (this.blogPosts.length === 0) {
+      this.noBlogPosts = true
+    }
   }
 }
 </script>
@@ -41,8 +54,18 @@ export default {
   margin: auto;
 }
 
+.noposts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  min-height: 50vh;
+  color: #888;
+}
+
 .mb_feed_width {
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .dt_feed_width {

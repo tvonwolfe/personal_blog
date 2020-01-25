@@ -41,10 +41,7 @@ export default {
             id: doc.id,
             category: data.post_category,
             title: data.post_title,
-            content: data.post_contents
-              .split('\n\n')
-              .slice(0, 2) // first 3 'paragraphs'
-              .join(),
+            content: this.getPreviewText(data.post_contents),
             timestamp: data.post_timestamp.seconds
           })
 
@@ -63,6 +60,24 @@ export default {
       .catch(() => {
         this.errorLoading = true
       })
+  },
+  methods: {
+    nthIndexOf(str, pattern, n) {
+      const L = str.length
+      let i = -1
+      while (n-- && i++ < L) {
+        i = str.indexOf(pattern, i)
+        if (i < 0) break
+      }
+      return i
+    },
+    getPreviewText(content) {
+      const thirdParagraphIndex = this.nthIndexOf(content, '\n\n', 2)
+      if (thirdParagraphIndex === -1) {
+        return content
+      }
+      return content.substring(0, thirdParagraphIndex)
+    }
   }
 }
 </script>

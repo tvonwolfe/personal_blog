@@ -33,12 +33,25 @@ code,
 pre * {
   background-color: #2a2a2a;
   font-family: monospace;
-  font-size: 0.85rem;
+  font-size: 1rem;
   white-space: pre;
 }
 
 .markdown_area * {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   line-height: 1.5;
+}
+
+.markdown_area p {
+  font-size: 17px;
+}
+
+.markdown_area h2 {
+  font-size: 20px;
+}
+
+img {
+  max-width: 95%;
+  margin: auto;
 }
 </style>

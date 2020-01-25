@@ -21,7 +21,7 @@
           </option>
         </select>
       </div>
-      <markdown-editor :input="blogPostForm.editorInput" class="editor">
+      <markdown-editor :input.sync="blogPostForm.editorInput" class="editor">
       </markdown-editor>
       <div class="button_container">
         <button type="submit" class="submitbutton">
