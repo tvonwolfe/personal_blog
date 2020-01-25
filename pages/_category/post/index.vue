@@ -57,7 +57,6 @@ export default {
       })
       .catch(() => {
         this.errorLoading = true
-        console.log('error')
       })
       .finally(() => {
         this.isLoading = false

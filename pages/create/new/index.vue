@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import firebase from 'firebase'
-import MarkdownEditor from '../../components/MarkdownEditor.vue'
+import firebase from 'firebase/app'
+import MarkdownEditor from '../../../components/MarkdownEditor.vue'
 require('firebase/auth')
 export default {
   components: {

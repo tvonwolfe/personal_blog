@@ -5,7 +5,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _1a0bfea6 = () => interopDefault(import('..\\pages\\about\\index.vue' /* webpackChunkName: "pages_about_index" */))
 const _6f98f825 = () => interopDefault(import('..\\pages\\create\\index.vue' /* webpackChunkName: "pages_create_index" */))
-const _089694b3 = () => interopDefault(import('..\\pages\\create\\new.vue' /* webpackChunkName: "pages_create_new" */))
+const _155fa06f = () => interopDefault(import('..\\pages\\create\\new\\index.vue' /* webpackChunkName: "pages_create_new_index" */))
 const _18b19121 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 const _668a7556 = () => interopDefault(import('..\\pages\\_category\\index.vue' /* webpackChunkName: "pages__category_index" */))
 const _551c3c36 = () => interopDefault(import('..\\pages\\_category\\post\\index.vue' /* webpackChunkName: "pages__category_post_index" */))
@@ -36,7 +36,7 @@ export const routerOptions = {
     name: "create"
   }, {
     path: "/create/new",
-    component: _089694b3,
+    component: _155fa06f,
     name: "create-new"
   }, {
     path: "/",

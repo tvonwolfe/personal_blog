@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import { mixinDetectMobile } from '../../components/DetectMobile.js'
 require('firebase/auth')
 export default {
