@@ -40,6 +40,18 @@ pre * {
 .markdown_area * {
   margin-bottom: 12px;
   line-height: 1.5;
-  font-size: 18px;
+}
+
+.markdown_area p {
+  font-size: 17px;
+}
+
+.markdown_area h2 {
+  font-size: 20px;
+}
+
+img {
+  max-width: 95%;
+  margin: auto;
 }
 </style>

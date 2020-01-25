@@ -71,6 +71,10 @@ export default {
 </script>
 
 <style scoped>
+.blog_post:first-of-type {
+  margin-top: 25px;
+}
+
 .blog_post {
   display: flex;
   flex-direction: column;
@@ -79,10 +83,6 @@ export default {
   background-color: #3d4043;
   border-radius: 4px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
-}
-
-.blog_post:first-of-type {
-  margin-top: 25px;
 }
 
 .blog_post:last-of-type {

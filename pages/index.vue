@@ -70,7 +70,7 @@ export default {
       return i
     },
     getPreviewText(content) {
-      const thirdParagraphIndex = this.nthIndexOf(content, '\n\n', 3)
+      const thirdParagraphIndex = this.nthIndexOf(content, '\n\n', 2)
       if (thirdParagraphIndex === -1) {
         return content
       }
