@@ -67,7 +67,7 @@ export default {
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then((data) => {
           this.$router.push({
-            path: this.$route.fullPath + '/new'
+            path: '/create/new'
           })
         })
         .catch(() => {
