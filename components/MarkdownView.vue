@@ -10,7 +10,16 @@ export default {
   props: { md: { type: String, default: '' } },
   computed: {
     compiledMarkdown() {
+      const renderer = new marked.Renderer()
+      const linkRenderer = renderer.link
+
+      renderer.link = (href, title, text) => {
+        const html = linkRenderer.call(renderer, href, title, text)
+        return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ')
+      }
+
       return marked(this.md, {
+        renderer,
         highlight: (code) => {
           return hljs.highlightAuto(code).value
         }

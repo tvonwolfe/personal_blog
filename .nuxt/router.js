@@ -3,12 +3,12 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1a0bfea6 = () => interopDefault(import('..\\pages\\about\\index.vue' /* webpackChunkName: "pages_about_index" */))
-const _6f98f825 = () => interopDefault(import('..\\pages\\create\\index.vue' /* webpackChunkName: "pages_create_index" */))
-const _089694b3 = () => interopDefault(import('..\\pages\\create\\new.vue' /* webpackChunkName: "pages_create_new" */))
-const _18b19121 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
-const _668a7556 = () => interopDefault(import('..\\pages\\_category\\index.vue' /* webpackChunkName: "pages__category_index" */))
-const _19249acc = () => interopDefault(import('..\\pages\\_category\\post.vue' /* webpackChunkName: "pages__category_post" */))
+const _413e9c63 = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
+const _8b8f4308 = () => interopDefault(import('../pages/create/index.vue' /* webpackChunkName: "pages/create/index" */))
+const _e08cb66c = () => interopDefault(import('../pages/create/new.vue' /* webpackChunkName: "pages/create/new" */))
+const _7a67d8a5 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _27cea49a = () => interopDefault(import('../pages/_category/index.vue' /* webpackChunkName: "pages/_category/index" */))
+const _0cef62cf = () => interopDefault(import('../pages/_category/post.vue' /* webpackChunkName: "pages/_category/post" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -28,27 +28,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _1a0bfea6,
+    component: _413e9c63,
     name: "about"
   }, {
     path: "/create",
-    component: _6f98f825,
+    component: _8b8f4308,
     name: "create"
   }, {
     path: "/create/new",
-    component: _089694b3,
+    component: _e08cb66c,
     name: "create-new"
   }, {
     path: "/",
-    component: _18b19121,
+    component: _7a67d8a5,
     name: "index"
   }, {
     path: "/:category",
-    component: _668a7556,
+    component: _27cea49a,
     name: "category"
   }, {
     path: "/:category/post",
-    component: _19249acc,
+    component: _0cef62cf,
     name: "category-post"
   }],
 
