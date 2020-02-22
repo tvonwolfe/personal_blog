@@ -3,7 +3,7 @@
     <Header />
     <NavBar :links="linkRoutes" />
     <nuxt />
-    <Footer name="Tony Von Wolfe" />
+    <Footer />
   </div>
 </template>
 
