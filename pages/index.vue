@@ -72,9 +72,9 @@ export default {
     getPreviewText(content) {
       const thirdParagraphIndex = this.nthIndexOf(content, '\n\n', 2)
       if (thirdParagraphIndex === -1) {
-        return content
+        return content + '...'
       }
-      return content.substring(0, thirdParagraphIndex)
+      return content.substring(0, thirdParagraphIndex) + '...'
     }
   }
 }

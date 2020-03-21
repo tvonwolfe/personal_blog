@@ -1,19 +1,16 @@
 <template>
   <div
     id="content_feed"
-    v-bind:class="[
-      { mb_feed_width: isMobile() },
-      { dt_feed_width: !isMobile() }
-    ]"
+    :class="[{ mb_feed_width: isMobile() }, { dt_feed_width: !isMobile() }]"
   >
     <BlogPost
-      :key="post.id"
       v-for="post in blogPosts"
+      :id="post.id"
+      :key="post.id"
       :category="post.category"
       :title="post.title"
       :content="post.content"
       :timestamp="post.timestamp"
-      :id="post.id"
     />
     <div v-show="noBlogPosts" class="noposts">
       <h1>There's nothing here yet...</h1>
