@@ -9,7 +9,10 @@
     <span v-if="errorLoading" class="loaderror">
       <h2>Something went wrong :(</h2>
     </span>
-    <ContentView v-if="!isLoading && !errorLoading" :blogPosts="[postData]" />
+    <ContentView
+      v-if="$route.query.id && !isLoading && !errorLoading"
+      :blogPosts="[postData]"
+    />
   </div>
 </template>
 
@@ -41,7 +44,7 @@ export default {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          if (this.$route.query.hasOwnProperty('id')) {
+          if (this.$route.query.id) {
             if (doc.id === this.$route.query.id) {
               const data = doc.data()
               this.postData = {
