@@ -2,7 +2,7 @@
   <div id="footer">
     <ul class="social_links">
       <li>
-        <a target="_blank" href="https://github.com/twolfe21/">
+        <a target="_blank" href="https://github.com/tvonwolfe/">
           <img src="@/assets/github_icon.png" />
         </a>
       </li>
